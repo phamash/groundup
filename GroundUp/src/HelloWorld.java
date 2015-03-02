@@ -56,5 +56,7 @@ public class HelloWorld {
 		System.out.println("Calories burned: " + totalCalories);
 	}				finished with the runner's calc method	*/
 	
-	
+	public static void main(String[] args){
+	System.out.println("Hello world");
+	}
 }
