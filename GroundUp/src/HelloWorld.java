@@ -56,8 +56,69 @@ public class HelloWorld {
 		System.out.println("Calories burned: " + totalCalories);
 	}				finished with the runner's calc method	*/
 	
+	/*	method for inputting numbers of an array, and printing them in reverse
 	public static void main(String[] args){
-	System.out.println("Hello world");
-	System.out.println("Hello world");
+		Scanner input = new Scanner(System.in);
+	int[] list = new int[5];
+	System.out.print("Enter 5 integers: ");
+	
+	//reads values into the liist
+	for(int i = 0; i < 5; i++)
+		list[i] = input.nextInt();
+	
+	System.out.print("List in reverse: ");
+	//prints the values in reverse
+	for(int i = 4; i >=0; i--)
+		System.out.print(list[i] + " ");
+	
+	System.out.println();
+	}		finished with printing the array in reverse	*/
+	
+	/* a method to learn about recursion
+	public static void forgetMeNot(int n)	//learning about recursion. n being the number 
+	// of times the message is printed
+	{
+		if(n!=0)
+		{
+			System.out.println("I miss you");
+			forgetMeNot(n-1);	//the recurseive call
+		}
 	}
+	public static void main(String[] args)
+	{
+		forgetMeNot(3);	//invokes the method for the first time
+		System.out.println();
+		System.out.println("Love, ME");
+	}		finished the method about learning recursion */
+	
+	/*	another method to learn about recursion - non tail recursive
+	public static int findLowest(int arr[], int size)
+	{
+		//finds the lowest integer in arr[] from index, start to end
+		
+		if(size==1)	
+			return arr[0];	//written in case the user inputs just 1 number
+		int temp = findLowest(arr, size-1);
+		if(temp<arr[size-1])
+		return(temp);
+		else return arr[size-1];
+	}
+	
+	public static void main(String[] args)
+	{
+		Scanner input = new Scanner(System.in);
+		System.out.println("How many students? ");
+		int size = input.nextInt();
+		int a[] = new int[size];
+		
+		for(int i = 0;i < size; i++)
+		{
+			System.out.println("input lottery number: ");
+			a[i] = input.nextInt();
+			
+		}
+		System.out.println("the lowest lottery number is: " + findLowest(a, size));
+	}		finished with the example for non-tail recursive */
+	
+	
 }
