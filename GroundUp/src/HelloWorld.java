@@ -210,7 +210,7 @@ public class HelloWorld {
 			for(int i = 0; i<10;i++)
 				System.out.print(a[i] + " ");
 
-		}				END OF QUICKSORT METHOD */
+		}				END OF QUICKSORT METHOD.. */
 	
 	
 	
