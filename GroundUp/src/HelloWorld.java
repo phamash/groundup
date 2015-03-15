@@ -120,5 +120,98 @@ public class HelloWorld {
 		System.out.println("the lowest lottery number is: " + findLowest(a, size));
 	}		finished with the example for non-tail recursive */
 	
+	/* learning more about recursion
+	public static void main(String[] args){
+		System.out.println(fact(5));
+	}
 	
-}
+	public static long fact(long n){
+		if(n <= 1)
+			return 1;
+		else
+			return n * fact(n-1);
+	}	done with the example of recursion - calling itself until it reaches 1, then is done.*/
+	
+	/*	an enhanced for loop
+	public static void main(String[] args){
+		int ashley[] = {3,4,5,6,7};
+		int total = 0;
+		
+		for(int x: ashley){	//the type, the identifier x which holds the variable to loop through
+			total +=x;		//added up the numbers in the array 
+		}
+		System.out.println(total);	//printed the total
+			
+	}		finished with the enhanced for loop */
+
+	/* learning about arrays in methods, and also an enhanced for loop
+	public static void main(String[] args){
+		int ashley[] = {3,4,5,6,7};
+		change(ashley);
+		
+		for(int y: ashley)		// an enhanced for loop that will pass the array  through 
+			System.out.println(y);		//prints it out on the screen
+	}
+	public static void change(int x[]){
+		for(int counter=0;counter<x.length;counter++)
+			x[counter]+=5;		//takes each of the values and adds 5 to it
+	} 		an array in the method	*/
+	
+	
+	/*		ASSIGNMENT #1, CHANGE IT
+	public static void main(String[] args){
+	Testing testingObject = new Testing();
+	System.out.println(testingObject.toMilitary());
+	
+	testingObject.setTime(13, 27, 9);
+	System.out.println(testingObject.toMilitary());
+	System.out.println(testingObject.toString());
+	
+
+	}		end of assignment #1	*/
+	
+	
+	/*		A QUICK SORT METHOD, sorts through an array. takes the last number of the array, positions it correctly
+	 * once the 'pivot' is in place, it does 2 sorts - all  those to the left, and all those to the right. Sorted!
+	public static int partition(int[] a, int low, int high){	//places the pivot (a[high]) in its final position
+		//returns the final position of pivot
+		int left = low-1; int temp;
+		int pivot = a[high];
+		
+		for(int right = low; right<high; right++)
+		{
+			if(a[right]<=pivot)
+			{
+				left++;
+				temp = a[left];		//swap a[left] and a[right]
+				a[left] = a[right];
+				a[right] = temp;
+			}
+		}
+		temp = a[left+1];		//swap pivot = a[high] with a[left+1]
+		a[left+1] = a[high];
+		a[high] = temp;
+		return left + 1;		//pivot's new position in the array
+	}
+	
+	public static void quickSort(int[] a, int low, int high){
+		if(low<high)										//if the array has more than one item
+		{
+			int pivotPlace = partition(a, low, high);		//place pivot into its final position
+			quickSort(a,low,pivotPlace-1);					//sort the values left of the pivot
+			quickSort(a,pivotPlace+1, high);				//sort the values right of the pivot
+		}
+	}
+	
+		public static void main(String[] args){
+			int[] a = {9,5,7,2,0,3,8,4,1,6};	//some sample data
+			HelloWorld.quickSort(a,0,9);
+			System.out.print("the sorted data: ");
+			for(int i = 0; i<10;i++)
+				System.out.print(a[i] + " ");
+
+		}				END OF QUICKSORT METHOD */
+	
+	
+	
+	}
