@@ -1,5 +1,5 @@
 import java.util.*;
-
+import java.io.*;
 
 public class HelloWorld {
 	/*calculates Grade Averages of students
@@ -7,7 +7,7 @@ public class HelloWorld {
 		Scanner input = new Scanner(System.in);
 		int numStudents, numGrades;
 		int grade; 	//the individual grade
-		int sum = 0; 	//the sum of a student's grades
+		int sum = 0; 	//the sum of a student's grades 
 		double average;
 		
 		//prompt for number of students and then grades per student
@@ -30,6 +30,7 @@ public class HelloWorld {
 			average = (double)sum/numGrades;
 			System.out.print("Average: " + average);
 			System.out.println();
+			}
 		}
 	}
  finished with the method for calculating student's average grades	*/
@@ -212,6 +213,274 @@ public class HelloWorld {
 
 		}				END OF QUICKSORT METHOD.. */
 	
+	/*		LEARNING A SWITCH STATEMENT
+	public static void main(String[] args){
+		Scanner input = new Scanner(System.in);
+		double balance = 5423, deposit, withdrawal;
+		int transaction, newTransaction;
+		
+		do{
+		System.out.println("Welcome! Enter your number for your transaction - ");
+		System.out.println("To withdraw cash, type in 1");
+		System.out.println("To make a deposit, type in 2");
+		System.out.println("To check your balance, type in 3");
+		
+		System.out.print("Transaction number: ");
+		transaction = input.nextInt();
+		
+		switch(transaction)
+		{
+		case 1: System.out.println("Enter withdrawal amount: ");
+		withdrawal = input.nextDouble();
+		if(withdrawal > balance)
+			System.out.println("Insufficient funds");
+		else
+		{
+			balance -= withdrawal;
+			System.out.println("Your balance is $" + balance);
+		}
+		break;
+		case 2: System.out.println("Enter deposit amount: ");
+			deposit = input.nextDouble();
+			balance += deposit;
+			System.out.println("Your balance is $" + balance);
+		break;
+		case 3: System.out.println("Your balance is $" + balance);
+		break;
+		default: System.out.println("Invalid transaction.");
+		}
+		
+		do{
+			System.out.println("Would you like to make another transaction? 1 for Yes, 0 for no: ");
+			newTransaction = input.nextInt();
+			System.out.println();
+				}while(newTransaction !=1);
+			}while(newTransaction == 1);
+		}
+			END OF A SWITCH STATEMENT PROBLEM */
 	
+	/*	GUESSING GAME USING SOME LOOPS
+public static void main(String[] args){
+	Scanner input = new Scanner(System.in);
+	int answer;		//used to play again if the user wants to
 	
+		do{
+			System.out.println("You will guess a number between 1 and n");
+			System.out.println("Give me the value for n");
+			int n = input.nextInt();
+			System.out.println("OK, I'm thinking of a number between 1 and " + n);
+			int number = (int)(n*Math.random())+1;
+			int guess;
+			int numGuesses = 0;
+		
+				do{		//play the game
+					System.out.print("Your guess: ");
+					guess = input.nextInt();
+					numGuesses++;
+					if(guess> number)
+						System.out.println("too high!");
+					else if(guess<number)
+						System.out.println("too low!");
+					else
+						System.out.println("You've guessed it!");
+				}while(number != guess);
+				System.out.println("Score: " + numGuesses + " guesses");
+		
+					do{			//repeat so the user either quits or keeps playing
+						System.out.print("Play again? 1 for YES; 0 for NO");
+						answer = input.nextInt();
+						System.out.println();
+					}while(answer !=0 && answer != 1);
+		
+		}while(answer==1);
+	}		END OF GUESSING GAME USING SOME LOOPS */
+	
+	/* learning to print a string in reverse
+	public static void main(String[] args){
+		Scanner input = new Scanner(System.in);
+		int answer;
+		do{	
+			
+		System.out.print("Print a word: ");
+		String word = input.next(); 		//returns a String reference
+		
+		System.out.print(word + " in reverse is: ");
+		for(int i = word.length()-1; i >= 0; i-- )
+			System.out.print(word.charAt(i));
+		System.out.println();
+		//repeat so the user either quits or keeps playing
+			System.out.print("Do again? 1 for YES; 0 for NO");
+			answer = input.nextInt();
+			System.out.println();
+		}while(answer !=0 || answer == 1);
+	}		END OF displaying a string in reverse */
+	
+	/*	CESAR'S CYPPER - shifting a message by the same nominal amount for each letter to create an encrypted message
+	public static String encrypt(String msg, int shift){
+		String encryptedMessage = new String();
+		msg = msg.toUpperCase();
+		
+		for(int i = 0; i <msg.length(); i++){
+			char ch = msg.charAt(i);
+			if(ch >='A' && ch <='Z')
+			{
+				int oldPositionInAlphabet = ch - 'A';
+				int newPositionInAlphabet = (oldPositionInAlphabet + shift)%26;
+				encryptedMessage = encryptedMessage + (char)(newPositionInAlphabet + 'A');
+			}
+		}
+		return encryptedMessage;
 	}
+	
+	public static void main(String[] args){
+	Scanner input = new Scanner(System.in);
+	System.out.print("Enter a message on one line: ");
+	String message = input.nextLine();
+	System.out.print("enter an integer in the rang 0-25: ");
+	int shift = input.nextInt();
+	System.out.println("the secret message is " + encrypt(message, shift));
+}		END OF THE ENCRYPTED MESSAGE LESSON (CESAR'S CYPHER) */
+	
+	/* a simple program to pull a txt file and print it to the screen
+	public static void main(String[] args) throws IOException {
+		File inputFile = new File("quotations.txt");
+		if(!inputFile.exists())
+		{
+			System.out.println("the file quotations.txt was not found ");
+			System.exit(0);
+		}
+		Scanner input = new Scanner(inputFile);
+		String line;
+		
+		while(input.hasNext())
+		{
+			line = input.nextLine();
+			System.out.println(line);
+		}
+		input.close();
+	}		end of a simple program to pull a txt file and print it to the screen */
+	
+	/* a codeWORD shift program. goes through a specified text file,  you input the codeword to shift, creates a new text file with the codeshifted message 
+	public static String encrypt(String msg, String cw){
+		String encryptedMessage = new String();
+		msg = msg.toUpperCase();
+		cw = cw.toUpperCase();
+		
+		for(int i = 0; i < msg.length(); i++){
+			char ch = msg.charAt(i);
+			int shift = (cw.charAt(i%cw.length())- 'A');
+			int oldPositionInAlphabet = ch - 'A';
+			int newPositionInAlphabet = (oldPositionInAlphabet + shift) % 26;
+			encryptedMessage = encryptedMessage + (char)(newPositionInAlphabet + 'A');
+		}
+		return encryptedMessage;
+	}
+	public static void main(String[] args) throws IOException{
+		//instantiate a scanner object for keyboard input
+		Scanner keyboard = new Scanner(System.in);
+		System.out.print("unencrypted file: ");
+		String unencryptedFile = keyboard.next();
+		
+		File inputFile = new File(unencryptedFile);
+		Scanner input = new Scanner(inputFile);
+		if(!inputFile.exists())
+		{
+			System.out.println("the file " + unencryptedFile + " was not found ");
+			System.exit(0);
+		}
+		
+		//open a new file for output
+		System.out.print("encrypted file: ");
+		String encryptedFile = keyboard.next();
+		File outputFile = new File(encryptedFile);
+		PrintWriter output = new PrintWriter(outputFile);
+		
+		if(!outputFile.exists())
+		{
+			System.out.println("the file " + unencryptedFile + " cannot open ");
+			System.exit(0);
+		}
+		
+		System.out.print("codeword: ");
+		String codeword = keyboard.next();
+		while(input.hasNext())
+		{
+			String line = input.nextLine();
+			String encryptedLine = encrypt(line, codeword);
+			output.println(encryptedLine);
+		}
+		input.close();
+		output.close();
+	}			end of a codeWORD shift program. goes through a specified text file, creates a new text file with the codeshifted message */
+
+	
+	/* 			START OF THE CHO HAN GAME USING THE DICE CLASS AND THE PLAY CHOHAN CLASS
+	//using dice class, created Dice.java ; created PlayChoHan.java
+	//this program has the user make a wager, guess if  the sum of 2 dice when rolled are even or odd, and if 
+	//the user is correct, they win the wager. if they guess wrong, they lose. can keep playing until they don't want to
+	//uses Dice.java & PlayChoHan.java
+	private int winnings;		//total won or lost (negative)
+	
+	public HelloWorld(){
+		winnings = 0;
+	}
+	
+	//an auxiliary method, used only in the class
+	private boolean win(String choice, int sum){
+		if(sum%2==0 && (choice.equals("e") || choice.equals("E")))	//if the user places an Even bet
+				return true;
+		if(sum%2!=0 && (!(choice.equals("e") || choice.equals("E"))))	//if user places an odd bet
+			return true;
+		return false;
+	}
+	
+	public void play(){
+		Scanner input = new Scanner(System.in);
+		Dice dice = new Dice(2);		//dice object instantiated; constructor called
+		String choice;					//even or odd
+		String answer;					//play again or not
+		int wager;						//bet how much?
+		
+		do
+		{
+			System.out.print("enter your wager: ");
+			wager = input.nextInt();
+			System.out.print("Enter 'E' for even, and anything else for odd: ");
+			choice = input.next();
+			int sum = dice.rollDice();			//invoke the method of the dice class
+			System.out.println("You rolled a " + sum);
+			if(win(choice,sum))
+			{
+				winnings += wager;
+				System.out.println("you won! Winnings so far: " + winnings);
+			}
+			else
+			{
+				winnings -= wager;
+				System.out.println("you lost! Winnings so far: " + winnings);
+			}
+			System.out.print("Play again? Enter 'y', 'Y', or 'Yes': ");
+			answer = input.next();
+			System.out.println();
+		}while(answer.equals("Y") || answer.equals("Yes") || answer.equals("yes") || answer.equalsIgnoreCase("y"));
+		reportWinnings();
+	}
+	
+	private void reportWinnings(){
+		if(winnings>0)
+			System.out.println("You won $" + winnings);
+		else if(winnings<0)
+			System.out.println("You lost $" + Math.abs(winnings));
+		else
+			System.out.println("You broke even");
+		System.out.println("Thanks for playin'");
+	}
+	
+	//using dice class, created Dice.java ; created PlayChoHan.java
+	//this program has the user make a wager, guess if  the sum of 2 dice when rolled are even or odd, and if 
+	//the user is correct, they win the wager. if they guess wrong, they lose. can keep playing until they don't want to
+	//uses Dice.java & PlayChoHan.java
+										END OF THE CHOHAN GAME */
+	
+	
+}
