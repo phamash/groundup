@@ -2,40 +2,9 @@ import java.util.*;
 import java.io.*;
 
 public class HelloWorld {
-	/*calculates Grade Averages of students
-	public static void main(String[] args){
-		Scanner input = new Scanner(System.in);
-		int numStudents, numGrades;
-		int grade; 	//the individual grade
-		int sum = 0; 	//the sum of a student's grades 
-		double average;
-		
-		//prompt for number of students and then grades per student
-		System.out.print("Number of students: ");
-		numStudents = input.nextInt();
-		System.out.print("Number of Grades: ");
-		numGrades = input.nextInt();
-		System.out.println();
-		
-		for(int i = 1; i <=numStudents; i++) 	//for each student
-		{
-			sum = 0;
-			System.out.println("Grades for student: " + i );
-			for(int j = 1; j <= numGrades; j++)
-			{
-					System.out.println(" " + j + ":");
-					grade = input.nextInt();
-					sum+= grade;
-		}
-			average = (double)sum/numGrades;
-			System.out.print("Average: " + average);
-			System.out.println();
-			}
-		}
-	}
- finished with the method for calculating student's average grades	*/
+							
 
-	/* method for calculating the calories burned for each mile run
+						/* method for calculating the calories burned for each mile run
 	public static double caloriesBurned(double weight, double distance){
 		
 		//returns the number of calories burned using the formula
@@ -169,10 +138,10 @@ public class HelloWorld {
 	System.out.println(testingObject.toString());
 	
 
-	}		end of assignment #1	*/
+	}						end of assignment #1	*/
 	
 	
-	/*		A QUICK SORT METHOD, sorts through an array. takes the last number of the array, positions it correctly
+			/*		A QUICK SORT METHOD, sorts through an array. takes the last number of the array, positions it correctly
 	 * once the 'pivot' is in place, it does 2 sorts - all  those to the left, and all those to the right. Sorted!
 	public static int partition(int[] a, int low, int high){	//places the pivot (a[high]) in its final position
 		//returns the final position of pivot
@@ -211,55 +180,11 @@ public class HelloWorld {
 			for(int i = 0; i<10;i++)
 				System.out.print(a[i] + " ");
 
-		}				END OF QUICKSORT METHOD.. */
+		}								END OF QUICKSORT METHOD.. */
 	
-	/*		LEARNING A SWITCH STATEMENT
-	public static void main(String[] args){
-		Scanner input = new Scanner(System.in);
-		double balance = 5423, deposit, withdrawal;
-		int transaction, newTransaction;
-		
-		do{
-		System.out.println("Welcome! Enter your number for your transaction - ");
-		System.out.println("To withdraw cash, type in 1");
-		System.out.println("To make a deposit, type in 2");
-		System.out.println("To check your balance, type in 3");
-		
-		System.out.print("Transaction number: ");
-		transaction = input.nextInt();
-		
-		switch(transaction)
-		{
-		case 1: System.out.println("Enter withdrawal amount: ");
-		withdrawal = input.nextDouble();
-		if(withdrawal > balance)
-			System.out.println("Insufficient funds");
-		else
-		{
-			balance -= withdrawal;
-			System.out.println("Your balance is $" + balance);
-		}
-		break;
-		case 2: System.out.println("Enter deposit amount: ");
-			deposit = input.nextDouble();
-			balance += deposit;
-			System.out.println("Your balance is $" + balance);
-		break;
-		case 3: System.out.println("Your balance is $" + balance);
-		break;
-		default: System.out.println("Invalid transaction.");
-		}
-		
-		do{
-			System.out.println("Would you like to make another transaction? 1 for Yes, 0 for no: ");
-			newTransaction = input.nextInt();
-			System.out.println();
-				}while(newTransaction !=1);
-			}while(newTransaction == 1);
-		}
-			END OF A SWITCH STATEMENT PROBLEM */
+						
 	
-	/*	GUESSING GAME USING SOME LOOPS
+							/*	GUESSING GAME USING SOME LOOPS
 public static void main(String[] args){
 	Scanner input = new Scanner(System.in);
 	int answer;		//used to play again if the user wants to
@@ -313,9 +238,9 @@ public static void main(String[] args){
 			answer = input.nextInt();
 			System.out.println();
 		}while(answer !=0 || answer == 1);
-	}		END OF displaying a string in reverse */
+	}						END OF displaying a string in reverse */
 	
-	/*	CESAR'S CYPPER - shifting a message by the same nominal amount for each letter to create an encrypted message
+			/*	CESAR'S CYPPER - shifting a message by the same nominal amount for each letter to create an encrypted message
 	public static String encrypt(String msg, int shift){
 		String encryptedMessage = new String();
 		msg = msg.toUpperCase();
@@ -339,9 +264,9 @@ public static void main(String[] args){
 	System.out.print("enter an integer in the rang 0-25: ");
 	int shift = input.nextInt();
 	System.out.println("the secret message is " + encrypt(message, shift));
-}		END OF THE ENCRYPTED MESSAGE LESSON (CESAR'S CYPHER) */
+}								END OF THE ENCRYPTED MESSAGE LESSON (CESAR'S CYPHER) */
 	
-	/* a simple program to pull a txt file and print it to the screen
+							/* a simple program to pull a txt file and print it to the screen
 	public static void main(String[] args) throws IOException {
 		File inputFile = new File("quotations.txt");
 		if(!inputFile.exists())
@@ -476,6 +401,7 @@ public static void main(String[] args){
 		System.out.println("Thanks for playin'");
 	}
 	
+	
 	//using dice class, created Dice.java ; created PlayChoHan.java
 	//this program has the user make a wager, guess if  the sum of 2 dice when rolled are even or odd, and if 
 	//the user is correct, they win the wager. if they guess wrong, they lose. can keep playing until they don't want to
@@ -483,4 +409,365 @@ public static void main(String[] args){
 										END OF THE CHOHAN GAME */
 	
 	
+						/* money.java - stonehill assigmnent 1, question 2
+
+	public static void main(String[] agrs){
+		int fiftypieces, quarters, dimes, nickels, pennies, beginningAmount, remaining;
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter an amount of change in cents: ");
+		beginningAmount = input.nextInt();
+		
+		fiftypieces = beginningAmount / 50;
+		remaining = beginningAmount % 50;
+		
+		quarters = remaining / 25;
+		remaining = remaining % 25;
+		
+		dimes = remaining / 10;
+		remaining = remaining % 10;
+		
+		nickels = remaining / 5;
+		remaining = remaining % 5;
+
+		int total = quarters + fiftypieces + nickels + dimes + remaining;
+		
+		System.out.println("Fiftycent pieces: " + fiftypieces);
+		System.out.println("Quarters: " + quarters);
+		System.out.println("Dimes: " + dimes);
+		System.out.println("Nickels: " + nickels);
+		System.out.println("Pennies: " + remaining);
+		System.out.println("total coins: " + total);
+	}					money.java - stonehill assigmnent 1, question 2 */
+	
+	
+						/* monkey.java StonehillAssignment 1, problem three 
+	public static void main(String[] args){
+		int numCoconuts, initialCount, manOne, manTwo, manThree, manFour, manFive;
+		Scanner input = new Scanner(System.in);
+		do
+		{
+		System.out.println("Enter the initial number of coconuts: ");
+		initialCount = input.nextInt();
+		}while (initialCount > 12495);
+		
+		if(initialCount >= 12495)
+		{
+		manOne = initialCount/5;
+		numCoconuts = initialCount - manOne;
+		
+		manTwo = numCoconuts/5;
+		numCoconuts = numCoconuts - manTwo;
+		
+		manThree = numCoconuts/5;
+		numCoconuts = numCoconuts - manThree;
+		
+		manFour = numCoconuts/5;
+		numCoconuts = numCoconuts - manFour;
+		
+		manFive = numCoconuts/5;
+		int remaining = numCoconuts - manFive - 5;
+		
+		int remainingDivided = remaining/5;
+		
+		System.out.println("man 1: " + manOne + " coconuts; Monkey: 1 coconut");
+		System.out.println("man 2: " + manTwo + " coconuts; Monkey: 1 coconut");
+		System.out.println("man 3: " + manThree + " coconuts; Monkey: 1 coconut");
+		System.out.println("man 4: " + manFour + " coconuts; Monkey: 1 coconut");
+		System.out.println("man 5: " + manFive + " coconuts; Monkey: 1 coconut");
+		
+		System.out.println(remaining + " coconuts remain, each gets " + remainingDivided + " and 1 for the monkey");
+		
+			}
+		}
+							monkey.java StonehillAssignment 1, problem three */
+	
+			
+		/* MathMagic.java - stonehill assignment 1, problem 4
+	public static void main(String[] args){
+		int threeSum, digitOne, digitTwo, digitThree;
+		
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Enter the first remaining digit: ");
+		digitOne = input.nextInt();
+		System.out.println("Enter the second remaining digit: ");
+		digitTwo = input.nextInt();
+		System.out.println("Enter the third remaining digit: ");
+		digitThree = input.nextInt();
+	
+		threeSum = digitOne + digitTwo + digitThree;
+		
+		for(int magicNumber = 1; magicNumber < 10; magicNumber++){
+			int divisibleByNine;
+			divisibleByNine = threeSum + magicNumber;
+			int i = 0;
+
+		if(divisibleByNine % 9 == 0 )
+			i = divisibleByNine;
+		int magic = divisibleByNine - threeSum;
+		if(i!=0)
+			System.out.println("your magic number is " + magic);
+
 }
+		
+	}			MathMagic.java - stonehill assignment 1, problem 4 */
+	
+				/* Warmup - Stonehill assignment
+	public static void main(String[] args){
+		int digit;
+		System.out.println("Welcome to Text Converter!");
+		System.out.print("enter your digit");
+		Scanner input = new Scanner(System.in);
+		digit = input.nextInt();
+		
+		if(digit < 10)
+		switch(digit)
+		{
+		case 1: System.out.println("You typed in the digit One!");
+		System.out.println("Bye!");
+		break;
+		case 2: System.out.println("You typed in the digit Two!");
+		System.out.println("Bye!");
+		break;
+		case 3: System.out.println("You typed in the digit Three!");
+		System.out.println("Bye!");
+		break;
+		case 4: System.out.println("You typed in the digit Four!");
+		System.out.println("Bye!");
+		break;
+		case 5: System.out.println("You typed in the digit Five!");
+		System.out.println("Bye!");
+		break;
+		case 6: System.out.println("You typed in the digit Six!");
+		System.out.println("Bye!");
+		break;
+		case 7: System.out.println("You typed in the digit Seven!");
+		System.out.println("Bye!");
+		break;
+		case 8: System.out.println("You typed in the digit Eight!");
+		System.out.println("Bye!");
+		break;
+		case 9: System.out.println("You typed in the digit Nine!");
+		System.out.println("Bye!");
+		break;
+		default: System.out.println("You typed in the digit Zero!");
+		System.out.println("Bye!");
+		}
+		else
+			System.out.println("invalid transaction");
+	}		Warmup - Stonehill assignment 2 */
+	
+					/* PhoneCall.java - Stonehill assignment 2, problem 1
+	public static void main(String[] args){
+		double length, cost;
+		int code;
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Rate Code: Select 0 for the Day Rate ");
+		System.out.println("Rate Code: Select 1 for the Evening Rate ");
+		System.out.println("Rate Code: Select 2 for the Weekend Rate ");
+		System.out.println();
+		
+		System.out.println("Enter the length of the call");
+		length = input.nextDouble();
+		System.out.println("Enter the rate code: ");
+		code = input.nextInt();
+		
+		switch(code)
+		{
+		case 0:
+		cost = length*.15;
+		System.out.println("The cost of the call is: " + cost);
+		break;
+		case 1:
+			cost = length*.07;
+			System.out.println("The cost of the call is: " + cost);
+			break;
+		case 2:
+			cost = length*.05;
+			System.out.println("The cost of the call is: " + cost);
+			break;
+		default:
+			System.out.println("Illegal rate code");
+		}
+		
+	}		PhoneCall.java - Stonehill assignment 2, problem 1 */
+	
+					/* FriendlyNumber.java - assignment 2, problem 2, stonehill assignment!!
+	public static void main(String[] args){
+	
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Enter the 5 digit number: ");
+		int number = input.nextInt();
+
+		int firstDigit = number/10000;
+		
+		int remainder4 = number%10000;
+		
+		int secondDigit = remainder4/1000;
+		
+		int remainder3 = remainder4%1000;
+		
+		int thirdDigit = remainder3/100;
+		
+		int remainder2 = remainder3%100;
+		
+		int fourthDigit = remainder2/10;
+		
+		int remainder1 = remainder2%10;
+		
+		int fifthDigit = remainder1/10;
+		
+		String twoDigits = String.valueOf(firstDigit) + String.valueOf(secondDigit);
+		
+		String threeDigits = String.valueOf(firstDigit) + String.valueOf(secondDigit) + String.valueOf(thirdDigit);
+		
+		String fourDigits = String.valueOf(firstDigit) + String.valueOf(secondDigit) + String.valueOf(thirdDigit) + String.valueOf(fourthDigit);
+		
+	
+		System.out.println(firstDigit);
+		System.out.println(twoDigits);
+		System.out.println(threeDigits);
+		System.out.println(fourDigits);
+		System.out.println(number); 
+	
+	int secondo = Integer.parseInt(twoDigits);
+	int thirdo = Integer.parseInt(threeDigits);
+	int fourtho = Integer.parseInt(fourDigits);
+		
+	if(firstDigit%1==0 && secondo %2==0 && thirdo%3==0 && fourtho%4==0 && number%5==0)
+		
+	System.out.println("The number is indeed friendly");
+		else
+		System.out.print("No, the number is not friendly"); 
+	} 				END OF FriendlyNumber.java - assignment 2, problem 2, stonehill assignment!! */
+	
+			/* TollFreeCall.java - assignment 2, problem 3, stonehill assignment!!
+	public static void main(String[] args){
+		long phoneNumber;
+		
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Enter the phone number");
+		phoneNumber = input.nextLong();
+		
+		long firstThreeDigits = phoneNumber/10000000;
+		
+		long firstRemainder = phoneNumber%10000000;
+		
+		long middleDigits = firstRemainder/10000;
+		
+		long secondRemainder = firstRemainder%10000;
+		
+		String middleNumber = String.valueOf(middleDigits);
+		String lastDigits = String.valueOf(secondRemainder);
+
+	if(firstThreeDigits == 800 || firstThreeDigits == 888 || firstThreeDigits == 877 || firstThreeDigits == 866)
+			System.out.println(firstThreeDigits + "-" + middleNumber + '-' + lastDigits + " is a toll free number");
+		else
+			System.out.println(phoneNumber + " is not a toll free number");
+		
+	}			END OF TollFreeCall.java - assignment 2, problem 3, stonehill assignment!! */
+	
+	
+				/* Stocks. java - assignment 2, problem 4, stonehill assignment!! 
+	public static void main(String[] args){
+		double stockPrice;
+		double commission = 0;
+		double total = 0;
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("How much did you sell the stock for?");
+		stockPrice = input.nextDouble();
+		
+
+		if(stockPrice < 100)
+		{
+			commission = 20;
+		 total = stockPrice + commission;
+		System.out.println("You made " + total + " total in the stock sale, including commission");
+		}
+			else if(stockPrice < 999)
+			{
+			commission = 20;
+			double firstTier = stockPrice - 99;
+			total = firstTier*.01 + commission + stockPrice;
+			System.out.println("You made " + total + " total in the stock sale, including commission");
+			}
+			else if(stockPrice < 9999)
+			{
+				commission = 30;
+				double secondTier = stockPrice - 999;
+				total = secondTier*.05 + commission + stockPrice;
+				System.out.println("You made " + total + " total in the stock sale, including commission");
+			}
+			else if(stockPrice <99999)
+			{
+					commission = 75;
+				double thirdTier = stockPrice - 9999;
+				total = thirdTier*.25 + commission + stockPrice;
+				System.out.println("You made " + total + " total in the stock sale, including commission");
+			}
+			else
+				System.out.println("Congrats, you made such a big sale, cannot compute!");
+	} 				END OF Stocks. java - assignment 2, problem 4, stonehill assignment!!  */
+	
+						/* AmicableNumbers.java -  assignment 2, problem 6. stonehill assignment!!
+	public static void main(String[] args){
+		
+		 int answer;
+	        int sum1 = 0, sum2 = 0;	
+	        int i;
+		do{
+		Scanner input = new Scanner(System.in);
+		System.out.println("Amicable numbers test: Enter the first number: ");
+		int number1 = input.nextInt();
+		System.out.println("Amicable numbers test: Enter the second number: ");
+        int number2 = input.nextInt();
+       
+        
+       
+		for(i=1;i <= number1;i++)
+        {
+            if(number1%i==0)  
+            		sum1+=i;
+        }
+        
+        for(i=1;i<=number2;i++)
+        {
+            if(number2%i==0) 
+            	sum2 = sum2+i;
+        }
+
+		if(sum1==sum2){
+           System.out.println(number1 + " & " + number2 + " are Amicable numbers!!!");
+		}
+        else
+           System.out.println("Not Amicable numbers!!");
+		do
+			{
+		System.out.print("Play again? Type in 1 for Yes, and any other digit for No");
+		answer = input.nextInt();
+		System.out.println();
+			}while(answer==1);
+        }while(answer == 1);
+        System.out.println("bye");
+	}		END OF AmicableNumbers.java -  assignment 2, problem 6. stonehill assignment!! */
+	
+	public static void main(String[] args){
+		System.out.println("Celsius" + "\t\t" + "Fahrenheit");
+		System.out.println("----------------------------");
+		
+		
+		for(int celsius = 0; celsius <=100; celsius++)
+		{
+			System.out.println(celsius + "\t\t" + (toFahrenheit(celsius)));
+		}
+	}
+	
+	public static double toFahrenheit(int celsius)
+	{
+		return(celsius*9/5) + 32;
+	}
+}			
